@@ -17,11 +17,15 @@ class List:
 			while self.holder.next != None:
 				self.holder = self.holder.next
 			self.holder.next = Node(value)
+	def print(self):
+		holder = self.head
+		while holder.next != None:
+			print(holder.val, end = " ")
+			holder = holder.next
 
-
-
-myList = List()
-myList.add("Hello")
-myList.add("Thing")
-print(myList.head.val)
-print(myList.head.next.val)
+list = List()
+while True:
+	list.add(input("Enter something to add to the list: "))
+	if input("Done? ") == "Done":
+		print(list.print())
+		exit()
